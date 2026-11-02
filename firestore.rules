@@ -1,0 +1,65 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null
+        && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+
+    function validEnquiry(enquiryId) {
+      let data = request.resource.data;
+      return data.keys().hasAll([
+          'enquiryId', 'name', 'mobile', 'email', 'experience', 'participants',
+          'date', 'status', 'source', 'createdAt'
+        ])
+        && data.keys().hasOnly([
+          'enquiryId', 'name', 'mobile', 'email', 'experience', 'participants',
+          'date', 'status', 'source', 'createdAt'
+        ])
+        && data.enquiryId == enquiryId
+        && data.status == 'new'
+        && data.source == 'website'
+        && data.name is string && data.name.size() >= 2 && data.name.size() <= 120
+        && data.mobile is string && data.mobile.size() >= 8 && data.mobile.size() <= 25
+        && data.email is string && data.email.size() <= 254
+        && data.experience is string && data.experience.size() >= 2 && data.experience.size() <= 120
+        && data.participants is int && data.participants >= 1 && data.participants <= 50
+        && data.date is string && data.date.size() == 10
+        && data.createdAt == request.time;
+    }
+
+    match /enquiries/{enquiryId} {
+      allow create: if validEnquiry(enquiryId);
+      allow read, update, delete: if isAdmin();
+    }
+
+    match /activities/{itemId} {
+      allow read: if isAdmin() || resource.data.published == true;
+      allow write: if isAdmin();
+    }
+
+    match /combos/{itemId} {
+      allow read: if isAdmin() || resource.data.published == true;
+      allow write: if isAdmin();
+    }
+
+    match /gallery/{itemId} {
+      allow read: if isAdmin() || resource.data.published == true;
+      allow write: if isAdmin();
+    }
+
+    match /siteSettings/{settingId} {
+      allow read: if settingId == 'contact';
+      allow write: if isAdmin();
+    }
+
+    match /banners/{bannerId} {
+      allow read: if isAdmin() || resource.data.published == true;
+      allow write: if isAdmin();
+    }
+
+    match /admins/{uid} {
+      allow read, write: if isAdmin() && request.auth.uid == uid;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 222" role="img" aria-labelledby="logo-title">
+  <title id="logo-title">Rehan Scuba Diving</title>
+  <defs>
+    <clipPath id="tanks"><path d="M153 61q0-12 12-12h11q12 0 12 12v72q0 17-17 17t-18-17zM197 61q0-12 12-12h11q12 0 12 12v72q0 17-17 17t-18-17z"/></clipPath>
+  </defs>
+  <text x="43" y="104" fill="#f2fbff" font-family="Arial Black, Arial, sans-serif" font-size="68" font-weight="900" letter-spacing="-2">RE</text>
+  <text x="238" y="104" fill="#f2fbff" font-family="Arial Black, Arial, sans-serif" font-size="68" font-weight="900" letter-spacing="-2">AN</text>
+  <text x="43" y="160" fill="#078cc7" font-family="Arial Black, Arial, sans-serif" font-size="68" font-weight="900" letter-spacing="-2">SC</text>
+  <text x="239" y="160" fill="#078cc7" font-family="Arial Black, Arial, sans-serif" font-size="68" font-weight="900" letter-spacing="-2">BA</text>
+  <g clip-path="url(#tanks)">
+    <path fill="#050505" d="M145 42h91v66h-91z"/>
+    <path fill="#078cc7" d="M145 108h91v56h-91z"/>
+  </g>
+  <path fill="#050505" d="M178 79h29v8h-29z"/>
+  <g fill="none" stroke="#f2fbff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+    <path d="M164 50V40m45 10V40M160 40h8m37 0h8"/>
+  </g>
+  <path fill="none" stroke="#f2fbff" stroke-width="2" d="M165 51h11q12 0 12 12v45m-1 0h-32m44-57h11q12 0 12 12v45m-1 0h-32"/>
+  <path fill="none" stroke="#fff" stroke-width="5" d="M155 108h33m9 0h33M156 126h31m11 0h31"/>
+  <path fill="none" stroke="#078cc7" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="M162 148v2q0 11 11 11h34q11 0 11-11v-2"/>
+  <text x="195" y="194" text-anchor="middle" fill="#d5e8ef" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="500" letter-spacing="17">DIVING</text>
+</svg>

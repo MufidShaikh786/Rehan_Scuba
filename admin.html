@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Rehan Scuba | Admin</title>
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <nav id="nav"><a href="/" class="logo" aria-label="Rehan Scuba home"><img src="/logo.svg" alt="Rehan Scuba Diving"></a><a class="btn" href="/">View website</a></nav>
+  <main class="admin-shell">
+    <section id="loginPanel">
+      <p class="eyebrow">Private workspace</p><h1>Admin sign in</h1>
+      <p class="lead">Only accounts listed in the Firebase admins collection can manage this website.</p>
+      <form id="loginForm" class="admin-form">
+        <div><label for="adminEmail">Email</label><input id="adminEmail" type="email" autocomplete="username" required></div>
+        <div><label for="adminPassword">Password</label><input id="adminPassword" type="password" autocomplete="current-password" required></div>
+        <button class="btn p" type="submit">Sign in</button>
+      </form>
+      <p id="loginMessage" class="admin-notice" role="status"></p>
+    </section>
+    <section id="dashboard" hidden>
+      <div class="admin-toolbar"><div><p class="eyebrow">Content and enquiries</p><h1>Admin dashboard</h1><p id="adminIdentity" class="lead"></p></div><button id="signOut" class="btn" type="button">Sign out</button></div>
+      <p id="adminMessage" class="admin-notice" role="status"></p>
+      <div id="adminTabs" class="admin-tabs" role="tablist">
+        <button class="filter active" data-tab="enquiries" type="button">Enquiries</button>
+        <button class="filter" data-tab="activities" type="button">Activities</button>
+        <button class="filter" data-tab="combos" type="button">Combos</button>
+        <button class="filter" data-tab="gallery" type="button">Gallery</button>
+        <button class="filter" data-tab="settings" type="button">Contact and banners</button>
+      </div>
+      <div id="panel-enquiries" class="admin-panel"></div>
+      <div id="panel-activities" class="admin-panel" hidden></div>
+      <div id="panel-combos" class="admin-panel" hidden></div>
+      <div id="panel-gallery" class="admin-panel" hidden></div>
+      <div id="panel-settings" class="admin-panel" hidden></div>
+    </section>
+  </main>
+  <script type="module" src="/src/admin.js"></script>
+</body>
+</html>
