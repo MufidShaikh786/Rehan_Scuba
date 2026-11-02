@@ -118,7 +118,15 @@ The admin supports six categories: Scuba Diving, Underwater Adventures, Parasail
 3. Add the verified custom domain in Firebase Hosting and complete its DNS instructions. Only then replace `YOUR-DOMAIN.example` in `robots.txt` and `sitemap.xml`, and add the real `og:image` URL and confirmed social profile links.
 4. Test `https://your-domain/admin`, a new enquiry, the owner email, admin status updates, media upload/delete, published content, WhatsApp, map, Instagram and Google reviews. Check that unauthenticated users cannot read enquiries or write content. Also test mobile browsers and reduced-motion mode.
 
-Cloudflare Pages and Netlify can host `dist/`, but Firebase Functions still need their own deployment and the hosting rewrites/proxy URLs must be adjusted. GitHub Pages is static only; it cannot provide these Firebase-backed `/admin` rewrites by itself.
+## Deploy to GitHub Pages
+
+The repository includes `.github/workflows/pages.yml`. On every push to `main`, it installs dependencies, builds the Vite site with relative asset paths that work under the `/Rehan_Scuba/` repository URL, and publishes `dist/` to GitHub Pages. Do not select the repository root as the Pages source; that serves unbuilt source HTML, so the page styles and scripts fail to load.
+
+One-time setup: open GitHub repository **Settings > Pages > Build and deployment**, then set **Source** to **GitHub Actions**. The first deployment should run after the workflow is pushed to `main`; check the Actions tab for its result. The public URL is `https://mufidshaikh786.github.io/Rehan_Scuba/`.
+
+The GitHub Pages build is static. Firebase Auth, Firestore, Storage and the server-side Functions still need their separate Firebase setup/deployment. The admin page is available at `/Rehan_Scuba/admin.html` on GitHub Pages; Firebase Hosting's `/admin` rewrite does not apply there.
+
+Cloudflare Pages and Netlify can also host `dist/`, but Firebase Functions still need their own deployment and the hosting rewrites/proxy URLs must be adjusted.
 
 ## Client confirmations still needed
 

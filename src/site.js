@@ -10,11 +10,14 @@ const escapeHTML = (value = "") => String(value).replace(/[&<>"']/g, (char) => (
 }[char]));
 const slug = (value) => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 const experienceDetails = new Map();
+const assetUrl = (path = "") => /^(https?:|data:|blob:)/i.test(path)
+  ? path
+  : `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
 
 function renderExperienceCard(item, kind) {
   const isPackage = kind === "package";
   const id = isPackage ? `package-${item.id}` : item.id;
-  const image = item.image || "";
+  const image = assetUrl(item.image || "");
   const description = item.description || "Ask the team to confirm activity details and availability.";
   experienceDetails.set(id, {
     id,
