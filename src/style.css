@@ -17,6 +17,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}form .f
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}.bub{display:none}}
 
 .hero{min-height:100svh;isolation:isolate;justify-content:center;background:radial-gradient(ellipse at 68% 38%,rgba(0,142,213,.62),transparent 49%),linear-gradient(112deg,#03131e 0%,#05283f 46%,#075889 100%)}
+.hero:after{content:"";position:absolute;inset:auto 0 0;height:190px;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(3,21,38,0),rgba(3,21,38,.56) 58%,var(--bg) 100%)}
 .hero .in{width:100%;max-width:1120px;margin:0 auto;padding:110px 24px 195px;text-align:center}
 .hero .eyebrow{color:#8ce8e7;margin-bottom:20px}
 .hero h1{max-width:1000px;margin:0 auto 18px;font-family:Georgia,"Times New Roman",serif;font-size:4.7rem;line-height:1.04;text-wrap:balance;text-shadow:0 3px 28px rgba(0,0,0,.35)}

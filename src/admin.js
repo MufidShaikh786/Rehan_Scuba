@@ -207,7 +207,7 @@ async function renderSettings() {
   const data = existing.exists() ? existing.data() : {};
   $("#businessName").value = data.businessName || "Rehan Scuba Diving & Watersports";
   $("#businessPhone").value = data.phone || "97655 78882";
-  $("#businessPhones").value = (data.phoneNumbers || ["94056 32440", "94210 89422"]).join(", ");
+ // $("#businessPhones").value = (data.phoneNumbers || ).join(", ");
   $("#businessWhatsApp").value = data.whatsappNumber || "";
   $("#businessAddressInput").value = data.address || "Dandeshwar Mandir, Beach, near Kushal Purva Resort, Malvan, Maharashtra 416606";
   $("#businessHours").value = data.openingHours || "Ask the team to confirm opening hours.";

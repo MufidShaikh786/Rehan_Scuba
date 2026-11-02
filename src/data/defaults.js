@@ -25,7 +25,7 @@ export const galleryCategories = [
 export const businessDefaults = {
   businessName: "Rehan Scuba Diving & Watersports",
   phone: "97655 78882",
-  phoneNumbers: ["97655 78882", "94056 32440", "94210 89422"],
+  phoneNumbers: ["97655 78882"],
   whatsappNumber: "",
   address: "Dandeshwar Mandir, Beach, near Kushal Purva Resort, Malvan, Maharashtra 416606",
   openingHours: "Ask the team to confirm opening hours.",
